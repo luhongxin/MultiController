@@ -13,6 +13,7 @@
 		B780E84E20257D9200836FAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B780E84D20257D9200836FAE /* Assets.xcassets */; };
 		B780E85120257D9200836FAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B780E84F20257D9200836FAE /* LaunchScreen.storyboard */; };
 		B780E85420257D9200836FAE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B780E85320257D9200836FAE /* main.m */; };
+		B780E85C20257EA500836FAE /* ChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B780E85B20257EA500836FAE /* ChildViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		B780E85020257D9200836FAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B780E85220257D9200836FAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B780E85320257D9200836FAE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		B780E85A20257EA500836FAE /* ChildViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChildViewController.h; sourceTree = "<group>"; };
+		B780E85B20257EA500836FAE /* ChildViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChildViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,15 +61,25 @@
 		B780E84320257D9200836FAE /* MultiController */ = {
 			isa = PBXGroup;
 			children = (
+				B780E85D202589E900836FAE /* MultiController */,
 				B780E84420257D9200836FAE /* AppDelegate.h */,
 				B780E84520257D9200836FAE /* AppDelegate.m */,
-				B780E84720257D9200836FAE /* ViewController.h */,
-				B780E84820257D9200836FAE /* ViewController.m */,
 				B780E84A20257D9200836FAE /* Main.storyboard */,
 				B780E84D20257D9200836FAE /* Assets.xcassets */,
 				B780E84F20257D9200836FAE /* LaunchScreen.storyboard */,
 				B780E85220257D9200836FAE /* Info.plist */,
 				B780E85320257D9200836FAE /* main.m */,
+			);
+			path = MultiController;
+			sourceTree = "<group>";
+		};
+		B780E85D202589E900836FAE /* MultiController */ = {
+			isa = PBXGroup;
+			children = (
+				B780E84720257D9200836FAE /* ViewController.h */,
+				B780E84820257D9200836FAE /* ViewController.m */,
+				B780E85A20257EA500836FAE /* ChildViewController.h */,
+				B780E85B20257EA500836FAE /* ChildViewController.m */,
 			);
 			path = MultiController;
 			sourceTree = "<group>";
@@ -145,6 +158,7 @@
 				B780E84920257D9200836FAE /* ViewController.m in Sources */,
 				B780E85420257D9200836FAE /* main.m in Sources */,
 				B780E84620257D9200836FAE /* AppDelegate.m in Sources */,
+				B780E85C20257EA500836FAE /* ChildViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -279,7 +293,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TX3D7AAF87;
 				INFOPLIST_FILE = MultiController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lhx.MultiController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -292,7 +308,9 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = TX3D7AAF87;
 				INFOPLIST_FILE = MultiController/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.1;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.lhx.MultiController;
 				PRODUCT_NAME = "$(TARGET_NAME)";
