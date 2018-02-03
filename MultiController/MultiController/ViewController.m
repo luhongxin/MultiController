@@ -12,8 +12,6 @@
 #define SCREENWIDTH ([UIScreen mainScreen].bounds.size.width)
 #define SCREENHEIGHT ([UIScreen mainScreen].bounds.size.height)
 
-#define EachSegmentWith             75   //segment单个宽度
-
 @interface ViewController ()<UIScrollViewDelegate>{
     
     UIScrollView *mNavScrollView;
@@ -22,6 +20,9 @@
     UIView *mLineView;
     
     NSMutableArray *mNavTitleArr;
+    NSMutableArray *mTitleWidthArr;
+    CGFloat mTotalWidth;
+    
     NSInteger mSelectIndex;
     
 }
@@ -37,7 +38,15 @@
     self.navigationItem.title = @"MutiController";
     self.view.backgroundColor = RGB(243, 243, 243, 1);
     
-    mNavTitleArr = [NSMutableArray arrayWithArray:@[@"测试lhx01",@"测试ddddd",@"测试03",@"测试04",@"测试05",@"测试06",@"测试07",@"测试08",@"测试09",]];
+    mTitleWidthArr = [NSMutableArray array];
+    mNavTitleArr = [NSMutableArray arrayWithArray:@[@"测试0000000001",@"测试02",@"测试03",@"测试04",@"测试05",@"测试06",@"测试07",@"测试08",@"测试0000000009",]];
+    
+    for (NSString *str in mNavTitleArr) {
+        CGFloat width = [self widthWithStr:str andFont:14.0] + 15.0;
+        NSLog(@"width === %f",width);
+        mTotalWidth += width;
+        [mTitleWidthArr addObject:[NSString stringWithFormat:@"%f",width]];
+    }
     
     [self initialization];
     [self setNavTitleView];
@@ -55,20 +64,28 @@
     mScrollView.showsHorizontalScrollIndicator = NO;
 }
     
+- (CGFloat)widthWithStr:(NSString *)str andFont:(CGFloat)font {
+    NSDictionary *attribute = @{NSFontAttributeName: [UIFont systemFontOfSize:font]};
+    CGSize  size = [str boundingRectWithSize:CGSizeMake(MAXFLOAT, 30)  options:(NSStringDrawingUsesFontLeading|NSStringDrawingTruncatesLastVisibleLine|NSStringDrawingUsesLineFragmentOrigin)   attributes:attribute context:nil].size;
+    return size.width;
+}
+    
+    
 #pragma mark segment
 -(void)setNavTitleView{
     
     mNavScrollView = [[UIScrollView alloc]init];
     mNavScrollView.frame = CGRectMake(0, 0, SCREENWIDTH, 29);
     mNavScrollView.showsHorizontalScrollIndicator = NO;
-    CGFloat navTitleWith = EachSegmentWith * mNavTitleArr.count;
-    mNavScrollView.contentSize = CGSizeMake(navTitleWith, 0);
+    mNavScrollView.contentSize = CGSizeMake(mTotalWidth, 0);
+
     mNavScrollView.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:mNavScrollView];
     
     
     mSegment = [[UISegmentedControl alloc]initWithItems:mNavTitleArr];
-    mSegment.frame = CGRectMake(0, 0, navTitleWith, 27);
+    mSegment.frame = CGRectMake(0, 0, mTotalWidth, 27);
+
     mSegment.apportionsSegmentWidthsByContent = YES;
     [mNavScrollView addSubview:mSegment];
     
@@ -92,6 +109,7 @@
     mLineView.frame = CGRectMake(10 + selectedIndex * (mSegment.frame.size.width/mNavTitleArr.count), 27, (mSegment.frame.size.width/mNavTitleArr.count) - 20, 2);
     
     [mNavScrollView addSubview:mLineView];
+    mLineView.hidden = YES;
 }
     
 #pragma mark ChildViewController
@@ -123,29 +141,40 @@
     
 #pragma mark 移动 mNavScrollView
 -(void)moveNavScrollView{
-    if (mNavTitleArr.count * EachSegmentWith <= SCREENWIDTH) {
+    if (mTotalWidth <= SCREENWIDTH) {
         //小于屏宽不移动
     }else{
-        //中间
-        if (mSelectIndex >= 3 && mSelectIndex <= (mNavTitleArr.count - 4)) {
-            [UIView animateWithDuration:0.37 animations:^{
-                mNavScrollView.contentOffset = CGPointMake((mSelectIndex - 2) * EachSegmentWith, 0);
-            }];
-        }else if (mSelectIndex < 3 ){
-            //左三
+        //当前中心
+        CGFloat leftWidth = 0;
+        for (int i = 0; i<mSelectIndex; i++) {
+            NSString *widthStr = mTitleWidthArr[i];
+            CGFloat width = [widthStr floatValue];
+            leftWidth += width;
+        }
+        CGFloat selectWidth = [mTitleWidthArr[mSelectIndex] floatValue];
+        CGFloat currectCenter = leftWidth + selectWidth/2;
+        
+
+        CGFloat moveWidth = currectCenter - SCREENWIDTH/2;
+        if (moveWidth >0) {
+
+            if (mTotalWidth - currectCenter < (SCREENWIDTH/2)) {
+                [UIView animateWithDuration:0.37 animations:^{
+                    mNavScrollView.contentOffset = CGPointMake(mTotalWidth - SCREENWIDTH, 0);
+                }];
+            } else {
+                [UIView animateWithDuration:0.37 animations:^{
+                    mNavScrollView.contentOffset = CGPointMake(moveWidth, 0);
+                }];
+            }
+        }else{
             [UIView animateWithDuration:0.37 animations:^{
                 mNavScrollView.contentOffset = CGPointMake(0, 0);
             }];
-        }else{
-            //右三
-            CGFloat contentSize = EachSegmentWith * mNavTitleArr.count;
-            [UIView animateWithDuration:0.37 animations:^{
-                mNavScrollView.contentOffset = CGPointMake(contentSize - SCREENWIDTH, 0);
-            }];
         }
+
     }
 }
-    
 #pragma mark ScrollViewDelegate
 - (void)scrollViewDidEndScrollingAnimation:(UIScrollView *)scrollView{
     

@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.summary      = "Scrollview of Multiple controller."
 
   s.homepage     = "https://github.com/luhongxin/MultiController"
-  s.license      = { :type => "MIT", :file => "FILE_LICENSE" }
+  s.license      = { :type => "MIT", :file => "LICENSE" }
   s.author             = { "lhx" => "luhongxin1030@163.com" }
   s.platform     = :ios, "8.0"
   s.source       = { :git => "https://github.com/luhongxin/MultiController.git", :tag => "#{s.version}" }
