@@ -130,9 +130,7 @@
 #pragma mark 移动 mNavScrollView
 -(void)moveNavScrollView{
     if (mTotalWidth <= SCREENWIDTH) {
-        //小于屏宽不移动
     }else{
-        //当前中心
         CGFloat leftWidth = 0;
         for (int i = 0; i<mSelectIndex; i++) {
             NSString *widthStr = mTitleWidthArr[i];
