@@ -1,5 +1,5 @@
 //
-//  ChildViewController.h
+//  MultiChildViewController.h
 //  MultiController
 //
 //  Created by lhx on 2018/2/3.
@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ChildViewController : UIViewController
+@interface MultiChildViewController : UIViewController
 
 @end

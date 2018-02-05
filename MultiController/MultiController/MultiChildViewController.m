@@ -1,20 +1,20 @@
 //
-//  ChildViewController.m
+//  MultiChildViewController.m
 //  MultiController
 //
 //  Created by lhx on 2018/2/3.
 //  Copyright © 2018年 lhx. All rights reserved.
 //
 
-#import "ChildViewController.h"
+#import "MultiChildViewController.h"
 
 #define RGB(r,g,b,a) [UIColor colorWithRed:r/255.0 green:g/255.0 blue:b/255.0 alpha:a]
 
-@interface ChildViewController ()
+@interface MultiChildViewController ()
 
 @end
 
-@implementation ChildViewController
+@implementation MultiChildViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -24,7 +24,6 @@
     int G = arc4random() % 255;
     int B = arc4random() % 255;
     self.view.backgroundColor = RGB(R, G, B, 1);
-    
 }
 
 - (void)didReceiveMemoryWarning {

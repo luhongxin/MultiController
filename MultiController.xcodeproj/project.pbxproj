@@ -13,7 +13,7 @@
 		B780E84E20257D9200836FAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B780E84D20257D9200836FAE /* Assets.xcassets */; };
 		B780E85120257D9200836FAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B780E84F20257D9200836FAE /* LaunchScreen.storyboard */; };
 		B780E85420257D9200836FAE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = B780E85320257D9200836FAE /* main.m */; };
-		B780E85C20257EA500836FAE /* ChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B780E85B20257EA500836FAE /* ChildViewController.m */; };
+		B780E85C20257EA500836FAE /* MultiChildViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B780E85B20257EA500836FAE /* MultiChildViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,8 +27,8 @@
 		B780E85020257D9200836FAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B780E85220257D9200836FAE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B780E85320257D9200836FAE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		B780E85A20257EA500836FAE /* ChildViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ChildViewController.h; sourceTree = "<group>"; };
-		B780E85B20257EA500836FAE /* ChildViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ChildViewController.m; sourceTree = "<group>"; };
+		B780E85A20257EA500836FAE /* MultiChildViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiChildViewController.h; sourceTree = "<group>"; };
+		B780E85B20257EA500836FAE /* MultiChildViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiChildViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -78,8 +78,8 @@
 			children = (
 				B780E84720257D9200836FAE /* MultiViewController.h */,
 				B780E84820257D9200836FAE /* MultiViewController.m */,
-				B780E85A20257EA500836FAE /* ChildViewController.h */,
-				B780E85B20257EA500836FAE /* ChildViewController.m */,
+				B780E85A20257EA500836FAE /* MultiChildViewController.h */,
+				B780E85B20257EA500836FAE /* MultiChildViewController.m */,
 			);
 			path = MultiController;
 			sourceTree = "<group>";
@@ -158,7 +158,7 @@
 				B780E84920257D9200836FAE /* MultiViewController.m in Sources */,
 				B780E85420257D9200836FAE /* main.m in Sources */,
 				B780E84620257D9200836FAE /* AppDelegate.m in Sources */,
-				B780E85C20257EA500836FAE /* ChildViewController.m in Sources */,
+				B780E85C20257EA500836FAE /* MultiChildViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

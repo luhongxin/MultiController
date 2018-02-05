@@ -106,7 +106,7 @@
 #pragma mark ChildViewController
 -(void)addChildViewController{
     for (int i = 0; i<mNavTitleArr.count; i++) {
-        NSString *classStr = @"ChildViewController";
+        NSString *classStr = @"MultiChildViewController";
         UIViewController *classVC = [[NSClassFromString(classStr) alloc] init];
         [self addChildViewController:classVC];
     }
@@ -157,7 +157,6 @@
                 mNavScrollView.contentOffset = CGPointMake(0, 0);
             }];
         }
-
     }
 }
 #pragma mark ScrollViewDelegate
