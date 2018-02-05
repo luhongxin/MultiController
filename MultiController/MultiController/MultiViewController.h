@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  MultiViewController.h
 //  MultiController
 //
 //  Created by lhx on 2018/2/3.
@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
+@interface MultiViewController : UIViewController
 
 
 @end

@@ -8,7 +8,7 @@
 
 #import "AppDelegate.h"
 
-#import "ViewController.h"
+#import "MultiViewController.h"
 
 @interface AppDelegate ()
 
@@ -24,7 +24,7 @@
     self.window.backgroundColor = [UIColor whiteColor];
     
     
-    ViewController *VC = [[ViewController alloc]init];
+    MultiViewController *VC = [[MultiViewController alloc]init];
     UINavigationController *nav = [[UINavigationController alloc]initWithRootViewController:VC];
     
     [[UINavigationBar appearance]setBarTintColor:[UIColor whiteColor]];

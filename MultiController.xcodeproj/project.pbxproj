@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		B780E84620257D9200836FAE /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = B780E84520257D9200836FAE /* AppDelegate.m */; };
-		B780E84920257D9200836FAE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B780E84820257D9200836FAE /* ViewController.m */; };
+		B780E84920257D9200836FAE /* MultiViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = B780E84820257D9200836FAE /* MultiViewController.m */; };
 		B780E84C20257D9200836FAE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B780E84A20257D9200836FAE /* Main.storyboard */; };
 		B780E84E20257D9200836FAE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B780E84D20257D9200836FAE /* Assets.xcassets */; };
 		B780E85120257D9200836FAE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B780E84F20257D9200836FAE /* LaunchScreen.storyboard */; };
@@ -20,8 +20,8 @@
 		B780E84120257D9200836FAE /* MultiController.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MultiController.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B780E84420257D9200836FAE /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		B780E84520257D9200836FAE /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		B780E84720257D9200836FAE /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		B780E84820257D9200836FAE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		B780E84720257D9200836FAE /* MultiViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MultiViewController.h; sourceTree = "<group>"; };
+		B780E84820257D9200836FAE /* MultiViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MultiViewController.m; sourceTree = "<group>"; };
 		B780E84B20257D9200836FAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B780E84D20257D9200836FAE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B780E85020257D9200836FAE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -76,8 +76,8 @@
 		B780E85D202589E900836FAE /* MultiController */ = {
 			isa = PBXGroup;
 			children = (
-				B780E84720257D9200836FAE /* ViewController.h */,
-				B780E84820257D9200836FAE /* ViewController.m */,
+				B780E84720257D9200836FAE /* MultiViewController.h */,
+				B780E84820257D9200836FAE /* MultiViewController.m */,
 				B780E85A20257EA500836FAE /* ChildViewController.h */,
 				B780E85B20257EA500836FAE /* ChildViewController.m */,
 			);
@@ -155,7 +155,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B780E84920257D9200836FAE /* ViewController.m in Sources */,
+				B780E84920257D9200836FAE /* MultiViewController.m in Sources */,
 				B780E85420257D9200836FAE /* main.m in Sources */,
 				B780E84620257D9200836FAE /* AppDelegate.m in Sources */,
 				B780E85C20257EA500836FAE /* ChildViewController.m in Sources */,
