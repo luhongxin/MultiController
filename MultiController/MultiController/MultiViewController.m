@@ -40,7 +40,7 @@
     self.navigationItem.title = @"MutiController";
     self.view.backgroundColor = RGB(243, 243, 243, 1);
     
-    mSelectIndex = 3;
+    mSelectIndex = 2;
     mTitleWidthArr = [NSMutableArray array];
     mNavTitleArr = [NSMutableArray arrayWithArray:@[@"测试0000000001",@"测试02",@"测试03",@"测试04",@"测试00000000000005",@"测试06",@"测试07",@"测试08",@"测试0000000009",]];
     
@@ -110,7 +110,11 @@
 -(void)chooseSegment:(id)sender{
     UISegmentedControl *segment = sender;
     mSelectIndex = segment.selectedSegmentIndex;
-    mScrollView.contentOffset = CGPointMake(SCREENWIDTH * mSelectIndex, 0);
+    
+    [UIView animateWithDuration:0.37 animations:^{
+        mScrollView.contentOffset = CGPointMake(SCREENWIDTH * mSelectIndex, 0);
+    }];
+//    mScrollView.contentOffset = CGPointMake(SCREENWIDTH * mSelectIndex, 0);
     UIViewController *childVC = self.childViewControllers[mSelectIndex];
     if (childVC.isViewLoaded) {
         return;
@@ -189,6 +193,7 @@
     }
     childView.view.frame = CGRectMake(mSelectIndex * SCREENWIDTH, 0, SCREENWIDTH, mScrollView.frame.size.height);
     [mScrollView addSubview:childView.view];
+    
 }
 
 - (void)didReceiveMemoryWarning {
